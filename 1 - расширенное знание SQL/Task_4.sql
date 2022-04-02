@@ -28,6 +28,7 @@ t3 AS (
 			OR (t2.year = t2.year_lead - 1 AND (t2.month <> 12 OR t2.month_lead <> 1))
 	)
 
+-- Main query with date correction.
 SELECT
 		 t3.client_id
 		,IIF(t3.month = 12, 1, t3.month + 1) AS month
